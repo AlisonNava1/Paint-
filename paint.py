@@ -59,8 +59,8 @@ def rectangle(start, end):
         forward(end.y - start.y)
         left(90)
                
-
     end_fill()
+    
 def triangle(start, end):
     "Draw rectangle from start to end."
     up()
@@ -72,8 +72,6 @@ def triangle(start, end):
         forward(end.x - start.x)
         left(120)
         forward(end.x- start.x)
-
-
 
     end_fill()
 
