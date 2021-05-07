@@ -9,15 +9,18 @@ Exercises
 5. Add width parameter.
 
 """
+#Modificado por:
+#Autor: Alison Daniela Nava Bravo
+#Autor: Eduardo Aguilar Chías
 
 from turtle import *
 from freegames import vector
 
 def line(start, end):
     "Draw line from start to end."
-    up()
+    up()  # levantar la tecla
     goto(start.x, start.y)
-    down()
+    down()  # bajar la tecla
     goto(end.x, end.y)
 
 def square(start, end):
@@ -94,14 +97,18 @@ def store(key, value):
 state = {'start': None, 'shape': line}
 setup(420, 420, 370, 0)
 onscreenclick(tap)
-listen()
-onkey(undo, 'u')
+listen()  # Escucha la tecla
+onkey(undo, 'u')  # Deshace el último cambio
+
+#Indica la tecla con la cual se cambia el color
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
 onkey(lambda: color('yellow'),'Y')
+
+#Indica la tecla con la cual generar cierta figura
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
