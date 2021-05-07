@@ -23,8 +23,8 @@ def line(start, end):
     down()  # bajar la tecla
     goto(end.x, end.y)
 
-# Esta función se encarga de dibujar un triáng cuadrado.
 def square(start, end):
+    """Esta función se encarga de dibujar un cuadrado"""
     up()
     goto(start.x, start.y)
     down()
@@ -36,8 +36,8 @@ def square(start, end):
 
     end_fill()
 
-# Esta función se encarga de dibujar un circulo. 
 def circle(start, end):
+    """Esta función se encarga de dibujar un circulo"""
     import turtle
     "Draw circle from start to end."
     up()
@@ -47,9 +47,8 @@ def circle(start, end):
     turtle.circle(end.x - start.x)
     end_fill()
 
-# Esta función se encarga de dibujar un rectangulo   
 def rectangle(start, end):
-    "Draw rectangle from start to end."
+    """Esta función se encarga de dibujar un rectangulo"""
     up()
     goto(start.x, start.y)
     down()
@@ -63,8 +62,8 @@ def rectangle(start, end):
                
     end_fill()
  
-# Esta función se encarga de dibujar un triángulo 
 def triangle(start, end):
+    """Esta función se encarga de dibujar un triángulo"""
     up()
     goto(start.x, start.y)
     down()
@@ -76,9 +75,9 @@ def triangle(start, end):
         forward(end.x- start.x)
 
     end_fill()
-
-# Se encarga de marcar el punto inicial para comenzar a dibujar la figura.              
+          
 def tap(x, y):
+    """Se encarga de marcar el punto inicial para comenzar a dibujar la figura"""   
     start = state['start']
 
     if start is None:
@@ -88,15 +87,17 @@ def tap(x, y):
         end = vector(x, y)
         shape(start, end)
         state['start'] = None
-
-# Guarda valor en la clave de estado.
+        
 def store(key, value):
+    """Guarda valor en la clave de estado"""
     state[key] = value
 
 state = {'start': None, 'shape': line}
 setup(420, 420, 370, 0)
 onscreenclick(tap)
-listen()  # Escucha la tecla
+
+listen()  # Escucha la tecla 
+
 onkey(undo, 'u')  # Deshace el último cambio
 
 # Indica la tecla con la cual se cambia el color
