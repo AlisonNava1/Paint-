@@ -54,23 +54,23 @@ def rectangle(start, end):
     begin_fill()
 
     for count in range(2):
-        forward(end.x - start.x)
-        left(90)
+        forward(end.x - start.x) #Se trazan las líneas  de un lado.
+        left(90) #Se usan 90 grados para tener un ángulo recto en todas las ezquinas.
         forward(end.y - start.y)
         left(90)
                
     end_fill()
-    
+ 
+#Esta función se encarga de dibujar un triángulo 
 def triangle(start, end):
-    "Draw rectangle from start to end."
     up()
     goto(start.x, start.y)
     down()
     begin_fill()
-
+#Este ciclo se encarga de dibujar las líneas del triángulo. Se repite una vez para trazar una sola vez lazs tres líneas
     for count in range(1):
-        forward(end.x - start.x)
-        left(120)
+        forward(end.x - start.x) 
+        left(120) #Ángulo de los grados de las líneas del triángulo. 
         forward(end.x- start.x)
 
     end_fill()
