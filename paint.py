@@ -77,9 +77,8 @@ def triangle(start, end):
 
     end_fill()
 
-               
+# Se encarga de marcar el punto inicial para comenzar a dibujar la figura.              
 def tap(x, y):
-    "Store starting point or draw shape."
     start = state['start']
 
     if start is None:
@@ -90,8 +89,8 @@ def tap(x, y):
         shape(start, end)
         state['start'] = None
 
+# Guarda valor en la clave de estado.
 def store(key, value):
-    "Store value in state at key."
     state[key] = value
 
 state = {'start': None, 'shape': line}
