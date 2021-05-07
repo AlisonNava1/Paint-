@@ -23,8 +23,8 @@ def line(start, end):
     down()  # bajar la tecla
     goto(end.x, end.y)
 
+# Esta función se encarga de dibujar un triáng cuadrado.
 def square(start, end):
-    "Draw square from start to end."
     up()
     goto(start.x, start.y)
     down()
@@ -36,6 +36,7 @@ def square(start, end):
 
     end_fill()
 
+# Esta función se encarga de dibujar un circulo. 
 def circle(start, end):
     import turtle
     "Draw circle from start to end."
@@ -46,6 +47,7 @@ def circle(start, end):
     turtle.circle(end.x - start.x)
     end_fill()
 
+# Esta función se encarga de dibujar un rectangulo   
 def rectangle(start, end):
     "Draw rectangle from start to end."
     up()
@@ -54,23 +56,23 @@ def rectangle(start, end):
     begin_fill()
 
     for count in range(2):
-        forward(end.x - start.x) #Se trazan las líneas  de un lado.
-        left(90) #Se usan 90 grados para tener un ángulo recto en todas las ezquinas.
+        forward(end.x - start.x) 
+        left(90) 
         forward(end.y - start.y)
         left(90)
                
     end_fill()
  
-#Esta función se encarga de dibujar un triángulo 
+# Esta función se encarga de dibujar un triángulo 
 def triangle(start, end):
     up()
     goto(start.x, start.y)
     down()
     begin_fill()
-#Este ciclo se encarga de dibujar las líneas del triángulo. Se repite una vez para trazar una sola vez lazs tres líneas
+    
     for count in range(1):
         forward(end.x - start.x) 
-        left(120) #Ángulo de los grados de las líneas del triángulo. 
+        left(120)  # Ángulo de los grados de las líneas del triángulo. 
         forward(end.x- start.x)
 
     end_fill()
@@ -98,7 +100,7 @@ onscreenclick(tap)
 listen()  # Escucha la tecla
 onkey(undo, 'u')  # Deshace el último cambio
 
-#Indica la tecla con la cual se cambia el color
+# Indica la tecla con la cual se cambia el color
 onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
@@ -106,7 +108,7 @@ onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
 onkey(lambda: color('yellow'),'Y')
 
-#Indica la tecla con la cual generar cierta figura
+# Indica la tecla con la cual generar cierta figura
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
